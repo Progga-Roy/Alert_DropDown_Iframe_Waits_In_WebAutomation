@@ -46,9 +46,13 @@ public class Alerts extends DriverSetUp{
 //        waitToClick.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#confirmButton")));
         Alert confirmAlert = driver.switchTo().alert();
 //        Thread.sleep(1000);
-        System.out.println("Alert text_3" + confirmAlert.getText());
+        System.out.println("Alert text_3: " + confirmAlert.getText());
 //        Thread.sleep(1000);
         confirmAlert.dismiss();
+        WebElement confirmResult = driver.findElement(By.cssSelector("#confirmResult"));
+        System.out.println("Confirm Result : " + confirmResult.getText());
+
+
 
         // Prompt Box
         driver.findElement(By.xpath("//button[@id='promtButton']")).click();
@@ -56,7 +60,8 @@ public class Alerts extends DriverSetUp{
         promptBoxAlert.sendKeys("Hello, I am there!");
         System.out.println("Alert text_4 : " + promptBoxAlert.getText());
         promptBoxAlert.accept();
-
+        WebElement promptResult = driver.findElement(By.cssSelector("#promptResult"));
+        System.out.println("Prompt result : " + promptResult.getText());
 
     }
 
