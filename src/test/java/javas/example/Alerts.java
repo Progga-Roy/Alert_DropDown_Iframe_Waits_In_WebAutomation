@@ -1,6 +1,5 @@
 package javas.example;
 
-
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -14,21 +13,30 @@ import java.time.Duration;
 public class Alerts extends DriverSetUp{
 
     @Test
-    public void webPageLoad(){
+    public void webPageLoad() throws InterruptedException {
         // Page load and get the title and url
         driver.get("https://demoqa.com/alerts");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds());
         System.out.println("Page Title : " + driver.getTitle());
         System.out.println("Current Url : " + driver.getCurrentUrl());
 
         //Locate first alert
         WebElement clickAlert1 =  driver.findElement(By.xpath("//button[@id='alertButton']"));
         clickAlert1.click();
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(2));
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(3));
         wait.until(ExpectedConditions.alertIsPresent());
         Alert alert = driver.switchTo().alert();
+//        Thread.sleep(1000);
         System.out.println("Alert text : " + alert.getText());
+//        Thread.sleep(1000);
         alert.accept();
+       //Locate second alert
+        driver.findElement(By.cssSelector("#timerAlertButton")).click();
+        WebDriverWait wait1 = new WebDriverWait(driver,Duration.ofSeconds(5));
+        wait1.until(ExpectedConditions.alertIsPresent());
+        Alert alert2 = driver.switchTo().alert();
+        System.out.println("Text : " + alert2.getText());
+        alert2.accept();
 
 
 
