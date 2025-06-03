@@ -39,7 +39,16 @@ public class Alerts extends DriverSetUp{
         alert2.accept();
 
 
-
+  driver.findElement(By.cssSelector("#confirmButton")).click();
+////  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+//        WebDriverWait waitToClick = new WebDriverWait(driver,Duration.ofSeconds(6));
+//        waitToClick.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#confirmButton")));
+  Alert confirmAlert = driver.switchTo().alert();
+        Thread.sleep(1000);
+        System.out.println("Text : " + confirmAlert.getText());
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        Thread.sleep(1000);
+        confirmAlert.dismiss();
     }
 
 
