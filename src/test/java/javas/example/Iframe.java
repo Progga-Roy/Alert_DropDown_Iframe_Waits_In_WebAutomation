@@ -2,7 +2,11 @@ package javas.example;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class Iframe  extends DriverSetUp{
     @Test
@@ -14,6 +18,7 @@ public class Iframe  extends DriverSetUp{
         WebElement  pageName =  driver.findElement(By.className("text-center"));
         System.out.println("Page Name : " + pageName.getText());
         //Inside the iframe
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
         driver.switchTo().frame("frame1");
         WebElement h1 =  driver.findElement(By.id("sampleHeading"));
         System.out.println("H1 from iframe: " + h1.getText());
