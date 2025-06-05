@@ -45,10 +45,10 @@ This project contains hands-on practice code using Selenium WebDriver to automat
 
 ## 🌐 Practice Websites Used
 
-- [DemoQA](https://demoqa.com/alerts)
-- [DemoQA](https://demoqa.com/frames)
-- [DemoQA](https://demoqa.com/select-menu)
-- [DemoQA](https://demoqa.com/select-menu)
+- Alert : [DemoQA](https://demoqa.com/alerts)
+- Frames : [DemoQA](https://demoqa.com/frames)
+- Select Menu : [DemoQA](https://demoqa.com/select-menu)
+- Wiats : [DemoQA](https://demoqa.com/dynamic-properties)
 
 
 ## 📸 Sample Output
